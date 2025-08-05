@@ -1,5 +1,44 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Theme Toggling (Dark Mode) ---
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const lightIcon = document.getElementById('theme-light-icon');
+    const darkIcon = document.getElementById('theme-dark-icon');
+
+    // Function to apply the theme
+    const applyTheme = (theme) => {
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark');
+            lightIcon.classList.remove('hidden');
+            darkIcon.classList.add('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+        }
+    };
+
+    // Check for saved theme in localStorage or user's system preference
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (prefersDark) {
+        applyTheme('dark');
+    } else {
+        applyTheme('light');
+    }
+
+    // Event listener for the toggle button
+    themeToggleButton.addEventListener('click', () => {
+        const isDark = document.documentElement.classList.contains('dark');
+        const newTheme = isDark ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    });
+
+
     // --- Mobile Menu Toggle ---
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -16,14 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
 
             // If mobile menu is open, close it after clicking a link
@@ -40,35 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    const observerOptions = {
-        root: null, // observes intersections relative to the viewport
-        rootMargin: '0px',
-        threshold: 0.4 // 40% of the section must be visible
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.getAttribute('id');
                 
-                // Remove active class from all nav links
                 navLinks.forEach(link => {
                     link.classList.remove('nav-active');
-                    // Also remove active state from mobile links if they share the class
-                    const mobileLink = document.querySelector(`#mobile-menu a[href*="${link.getAttribute('href').substring(1)}"]`);
-                    if(mobileLink) mobileLink.classList.remove('nav-active');
+                    if (link.getAttribute('href').includes(id)) {
+                        link.classList.add('nav-active');
+                    }
                 });
-                
-                // Add active class to the corresponding nav links (desktop and mobile)
-                const activeLinks = document.querySelectorAll(`a[href*="${id}"]`);
-                activeLinks.forEach(link => link.classList.add('nav-active'));
             }
         });
-    }, observerOptions);
+    }, { rootMargin: '0px', threshold: 0.4 });
 
-    // Observe each section
     sections.forEach(section => {
         observer.observe(section);
     });
-
 });
