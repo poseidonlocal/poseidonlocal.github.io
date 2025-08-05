@@ -4,134 +4,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>poseidonLocal | Developer Portfolio</title>
+    <title>poseidonLocal@github.io</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
                     colors: {
-                        primary: '#667eea',
-                        secondary: '#764ba2',
-                        dark: '#1a202c',
-                        'dark-light': '#2d3748',
+                        primary: '#9AFF00',
+                        secondary: '#7ED321',
+                        dark: '#1A1F2E',
+                        darker: '#0F1419',
+                        slate: '#2A3441',
+                        'slate-light': '#3A4551'
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* Sets the offset for the fixed header when scrolling to an anchor */
-        html {
-            scroll-padding-top: 4rem; /* 64px, same as header height */
-        }
-        /* Style for the active nav link */
-        .nav-active {
-            color: #667eea; /* primary color */
-            font-weight: 600;
-        }
-    </style>
 </head>
 
-<body class="font-sans leading-relaxed text-gray-700 bg-gray-50">
+<body class="font-sans leading-relaxed text-gray-100 bg-darker">
 
-    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+    <header class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50">
+        <nav class="max-w-6xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-2xl font-bold text-dark">poseidonLocal</a>
-                
-                <ul class="hidden md:flex items-center space-x-8" id="nav-menu">
-                    <li><a href="#home" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Home</a></li>
-                    <li><a href="#about" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">About</a></li>
-                    <li><a href="#projects" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Projects</a></li>
-                    <li><a href="#contact" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Contact</a></li>
+                <h1 class="text-xl font-bold text-gray-100">poseidonLocal</h1>
+                <ul class="flex space-x-8">
+                    <li><a href="#home" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">About</a></li>
+                    <li><a href="#projects" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
+                    <li><a href="#partnerships" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Partnerships</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
                 </ul>
-
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-dark">
-                        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                 <li><a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Home</a></li>
-                 <li><a href="#about" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">About</a></li>
-                 <li><a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Projects</a></li>
-                 <li><a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Contact</a></li>
-            </ul>
-        </div>
     </header>
 
     <main>
-        <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white min-h-[50vh] flex items-center">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center py-24 md:py-32">
-
-                <a href="#projects" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-semibold text-lg hover:transform hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
-                    Explore My Work
-                </a>
+        <section id="home" class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-16">
+            <div class="max-w-6xl mx-auto px-6 text-center">
+                <h2 class="text-5xl font-light mb-6">Welcome to My GitHub Website</h2>
+                <p class="text-xl mb-8 text-gray-300">A developer passionate about creating useful tools and applications</p>
+                <a href="#projects" class="inline-block bg-primary text-darker px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">View My Projects</a>
             </div>
         </section>
 
-        <section id="projects" class="py-24">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark">My GitHub/xGit Projects</h2>
-                    <p class="text-lg text-gray-500 mt-2">A selection of projects I made while <b>Bored</b></p>
-                </div>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden">
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold text-dark mb-2">Fallout Shelter Save Editor</h3>
-                            <p class="text-gray-600 mb-4 leading-relaxed">A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience.</p>
-                        </div>
-                        <div class="p-6 bg-gray-50">
-                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
-                                <span class="text-xs font-semibold bg-gray-100 text-gray-800 px-2 py-1 rounded-full">GUI</span>
-                            </div>
-                            <div class="flex gap-4">
-                                <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank" class="flex-1 text-center bg-dark text-white px-5 py-2.5 rounded-lg hover:bg-dark-light transition-colors duration-300 font-medium">View Source</a>
-                                <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank" class="flex-1 text-center bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-opacity-90 transition-colors duration-300 font-medium">Live Demo</a>
-                            </div>
+        <section id="about" class="py-20 bg-slate/30">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-gray-100 mb-12">About Me</h2>
+                <p class="text-lg text-gray-300 leading-relaxed">I'm a developer passionate about creating useful tools and applications. I enjoy working on projects that solve real problems and make life easier for users. My focus is on building clean, efficient, and user-friendly software.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-darker">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-100 text-center mb-16">My Projects</h2>
+                <div class="max-w-md mx-auto">
+                    <div class="bg-slate/50 border border-slate-light/30 rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 p-8 text-center">
+                        <h3 class="text-2xl font-bold text-gray-100 mb-4">Fallout Shelter Save Editor</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience.</p>
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank" class="inline-block bg-slate-light text-gray-100 px-6 py-3 rounded-lg hover:bg-slate transition-colors duration-300 font-medium border border-slate-light/50">View Source</a>
+                            <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank" class="inline-block bg-primary text-darker px-6 py-3 rounded-lg hover:bg-secondary transition-colors duration-300 font-medium">Live Demo</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-24 bg-dark text-white">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
-                <p class="text-xl mb-8 opacity-80">Have a project in mind or just want to say hello? I’d love to hear from you.</p>
-                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-                    <a href="https://github.com/poseidonlocal" target="_blank" class="inline-flex items-center bg-gray-200 text-dark px-6 py-3 rounded-lg hover:bg-white transition-colors duration-300 font-semibold">
-                        <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        GitHub
-                    </a>
-                    <a href="https://gitea.serversyndicate.com/Bored" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors duration-300 font-semibold">
-                         <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        xGit
-                    </a>
+        <section id="partnerships" class="py-20 bg-slate/20">
+            <div class="max-w-6xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-gray-100 text-center mb-16">Partnerships</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-slate/50 border border-slate-light/30 rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 p-8 text-center">
+                        <div class="flex justify-center mb-6">
+                            <img src="labs.png" alt="X360 LABS" class="h-24 w-auto">
+                        </div>
+                        <h3 class="text-3xl font-bold text-gray-100 mb-4">X360 LABS</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed text-lg">Proud to partner with X360 LABS, a cutting-edge gaming technology company focused on innovative controller solutions and gaming accessories. Together, we're pushing the boundaries of gaming experiences.</p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="#" target="_blank" class="inline-block bg-primary text-darker px-8 py-3 rounded-lg hover:bg-secondary transition-colors duration-300 font-semibold">Learn More</a>
+                            <a href="#contact" class="inline-block bg-slate-light text-gray-100 px-8 py-3 rounded-lg hover:bg-slate transition-colors duration-300 font-semibold border border-slate-light/50">Collaborate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-dark text-white">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
+                <p class="text-xl mb-8 text-gray-300">Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="https://github.com/poseidonlocal" target="_blank" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">GitHub</a>
+                    <a href="mailto:contact@poseidonlocal.dev" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">Email</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-dark-light text-white py-6">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="opacity-70">&copy; 2025 poseidonLocal. All Rights Reserved. Built with GitHub Pages & Tailwind CSS.</p>
+    <footer class="bg-darker border-t border-slate/30 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">&copy; 2025 poseidonLocal@github.io. Built with GitHub Pages.</p>
         </div>
     </footer>
 
