@@ -1,63 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bored - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>poseidonLocal | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#667eea',
+                        secondary: '#764ba2',
+                        dark: '#1a202c',
+                        'dark-light': '#2d3748',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Sets the offset for the fixed header when scrolling to an anchor */
+        html {
+            scroll-padding-top: 4rem; /* 64px, same as header height */
+        }
+        /* Style for the active nav link */
+        .nav-active {
+            color: #667eea; /* primary color */
+            font-weight: 600;
+        }
+    </style>
 </head>
-<body class="dark-theme">
-    <header>
-        <nav>
-            <div class="nav-container">
-                <h1 class="logo">Bored@GitHub.io</h1>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+
+<body class="font-sans leading-relaxed text-gray-700 bg-gray-50">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-bold text-dark">poseidonLocal</a>
+                
+                <ul class="hidden md:flex items-center space-x-8" id="nav-menu">
+                    <li><a href="#home" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Home</a></li>
+                    <li><a href="#about" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">About</a></li>
+                    <li><a href="#projects" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Projects</a></li>
+                    <li><a href="#contact" class="nav-link text-gray-600 hover:text-primary transition-colors duration-300">Contact</a></li>
                 </ul>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark">
+                        <svg id="menu-open-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        <svg id="menu-close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
             </div>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <ul class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                 <li><a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Home</a></li>
+                 <li><a href="#about" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">About</a></li>
+                 <li><a href="#projects" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Projects</a></li>
+                 <li><a href="#contact" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-100">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
     <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h2>Welcome to My GitHub Website Portfolio</h2>
-                <p>Just a place to display my nonsense adhd thoughts.</p>
-                <a href="#projects" class="cta-button">View My Projects</a>
+        <section id="home" class="bg-gradient-to-br from-primary to-secondary text-white min-h-[50vh] flex items-center">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center py-24 md:py-32">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">Creative Developer & Problem Solver</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90">
+                    Passionate about building clean, efficient, and user-friendly digital experiences.
+                </p>
+                <a href="#projects" class="inline-block bg-white text-primary px-8 py-3 rounded-full font-semibold text-lg hover:transform hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                    Explore My Work
+                </a>
             </div>
         </section>
 
-        <section id="about" class="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>I solder, code, and create things.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>My Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>FallOutShelter Save Editor</h3>
-                        <p>Fallout Shelter Save Editor for the Windows Store version and Steam</p>
-                        <a href="#" class="project-link">View Project</a>
+        <section id="about" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                 <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark">About Me</h2>
+                    <p class="text-lg text-gray-500 mt-2">A little bit about my journey and skills.</p>
+                </div>
+                <div class="grid md:grid-cols-5 gap-12 items-center">
+                    <div class="md:col-span-2">
+                        <div class="p-4 bg-gradient-to-br from-primary to-secondary rounded-lg shadow-lg">
+                             <svg class="w-full h-auto text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path><path d="M14.5 2.5l-5 19" stroke-width="0.5"></path><path d="M2.5 9.5l19 5" stroke-width="0.5"></path></svg>
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            I'm a developer who loves crafting useful tools and applications that solve real-world problems. My focus is on writing clean, efficient code and designing intuitive, user-friendly interfaces. I'm always eager to learn new technologies and take on challenging projects that push my skills to the next level.
+                        </p>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-semibold text-dark mb-4">Core Technologies:</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">JavaScript</span>
+                                <span class="bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">HTML & CSS</span>
+                                <span class="bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">Tailwind CSS</span>
+                                <span class="bg-primary/10 text-primary font-medium px-3 py-1 rounded-full">Git & GitHub</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <section id="projects" class="py-24">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark">My Projects</h2>
+                    <p class="text-lg text-gray-500 mt-2">A selection of projects I'm proud of.</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-dark mb-2">Fallout Shelter Save Editor</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Python</span>
+                                <span class="text-xs font-semibold bg-gray-100 text-gray-800 px-2 py-1 rounded-full">GUI</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank" class="flex-1 text-center bg-dark text-white px-5 py-2.5 rounded-lg hover:bg-dark-light transition-colors duration-300 font-medium">View Source</a>
+                                <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank" class="flex-1 text-center bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-opacity-90 transition-colors duration-300 font-medium">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col overflow-hidden">
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold text-dark mb-2">Another Awesome Project</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">Description of another fantastic project. It solves a complex problem with an elegant and user-friendly solution, showcasing different skills.</p>
+                        </div>
+                        <div class="p-6 bg-gray-50">
+                             <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs font-semibold bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">JavaScript</span>
+                                <span class="text-xs font-semibold bg-green-100 text-green-800 px-2 py-1 rounded-full">React</span>
+                                 <span class="text-xs font-semibold bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">API</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="#" target="_blank" class="flex-1 text-center bg-dark text-white px-5 py-2.5 rounded-lg hover:bg-dark-light transition-colors duration-300 font-medium">View Source</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-dark text-white">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl mb-8 opacity-80">Have a project in mind or just want to say hello? I’d love to hear from you.</p>
+                <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6">
+                    <a href="https://github.com/poseidonlocal" target="_blank" class="inline-flex items-center bg-gray-200 text-dark px-6 py-3 rounded-lg hover:bg-white transition-colors duration-300 font-semibold">
+                        <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:contact@poseidonlocal.dev" class="inline-flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-opacity-90 transition-colors duration-300 font-semibold">
+                         <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        Email Me
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Bored@GitHub.io. Built with GitHub Pages.</p>
+    <footer class="bg-dark-light text-white py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <p class="opacity-70">&copy; 2025 poseidonLocal. All Rights Reserved. Built with GitHub Pages & Tailwind CSS.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
