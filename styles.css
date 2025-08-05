@@ -1,3 +1,100 @@
+/* Dark Theme Styles */
+.dark-theme {
+  background: #181a20;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+}
+
+header, nav, .nav-container {
+  background: #23272f;
+  color: #e0e0e0;
+}
+
+.logo {
+  color: #00bcd4;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu li a {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.nav-menu li a:hover {
+  background: #00bcd4;
+  color: #181a20;
+}
+
+.hero {
+  background: linear-gradient(135deg, #23272f 60%, #181a20 100%);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.cta-button {
+  background: #00bcd4;
+  color: #181a20;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-button:hover {
+  background: #0097a7;
+}
+
+.about, .projects, .container {
+  background: #23272f;
+  color: #e0e0e0;
+  border-radius: 8px;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 900px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.project-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background: #181a20;
+  color: #e0e0e0;
+  border: 1px solid #23272f;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  flex: 1 1 300px;
+}
+
+.project-link {
+  color: #00bcd4;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+.project-link:hover {
+  color: #0097a7;
+}
+
+footer {
+  background: #23272f;
+  color: #888;
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid #181a20;
+}
 /* Reset and base styles */
 * {
     margin: 0;
