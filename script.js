@@ -16,11 +16,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
+        header.classList.add('backdrop-blur-sm');
         header.style.background = 'rgba(255, 255, 255, 0.95)';
-        header.style.backdropFilter = 'blur(10px)';
     } else {
+        header.classList.remove('backdrop-blur-sm');
         header.style.background = '#fff';
-        header.style.backdropFilter = 'none';
     }
 });
 
@@ -39,13 +39,13 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe project cards for animation
+// Observe project card for animation
 document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(card);
-    });
+    const projectCard = document.querySelector('.bg-white.rounded-xl');
+    if (projectCard) {
+        projectCard.style.opacity = '0';
+        projectCard.style.transform = 'translateY(20px)';
+        projectCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(projectCard);
+    }
 });
