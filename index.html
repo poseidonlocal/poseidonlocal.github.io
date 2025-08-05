@@ -31,11 +31,15 @@
             <div class="flex justify-between items-center h-16">
                 <h1 class="text-xl font-bold text-gray-100">poseidonLocal</h1>
                 <ul class="flex space-x-8">
-                    <li><a href="#home" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a></li>
-                    <li><a href="#about" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">About</a></li>
-                    <li><a href="#projects" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Projects</a></li>
-                    <li><a href="#partnerships" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Partnerships</a></li>
-                    <li><a href="#contact" class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Contact</a></li>
+                    <li><a href="#home"
+                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Projects</a>
+                    </li>
+                    <li><a href="#partnerships"
+                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Partnerships</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -45,49 +49,220 @@
         <section id="home" class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-16">
             <div class="max-w-6xl mx-auto px-6 text-center">
                 <h2 class="text-5xl font-light mb-6">Welcome to My GitHub Website</h2>
-                <p class="text-xl mb-8 text-gray-300">A developer passionate about creating useful tools and applications</p>
-                <a href="#projects" class="inline-block bg-primary text-darker px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">View My Projects</a>
+                <p class="text-xl mb-8 text-gray-300">A developer passionate about creating useful tools and
+                    applications</p>
+                <a href="#projects"
+                    class="inline-block bg-primary text-darker px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">View
+                    My Projects</a>
             </div>
         </section>
 
-        <section id="about" class="py-20 bg-slate/30">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-gray-100 mb-12">About Me</h2>
-                <p class="text-lg text-gray-300 leading-relaxed">I'm a developer passionate about creating useful tools and applications. I enjoy working on projects that solve real problems and make life easier for users. My focus is on building clean, efficient, and user-friendly software.</p>
-            </div>
-        </section>
 
-        <section id="projects" class="py-20 bg-darker">
-            <div class="max-w-6xl mx-auto px-6">
-                <h2 class="text-4xl font-bold text-gray-100 text-center mb-16">My Projects</h2>
-                <div class="max-w-md mx-auto">
-                    <div class="bg-slate/50 border border-slate-light/30 rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 p-8 text-center">
-                        <h3 class="text-2xl font-bold text-gray-100 mb-4">Fallout Shelter Save Editor</h3>
-                        <p class="text-gray-300 mb-6 leading-relaxed">A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience.</p>
-                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                            <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank" class="inline-block bg-slate-light text-gray-100 px-6 py-3 rounded-lg hover:bg-slate transition-colors duration-300 font-medium border border-slate-light/50">View Source</a>
-                            <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank" class="inline-block bg-primary text-darker px-6 py-3 rounded-lg hover:bg-secondary transition-colors duration-300 font-medium">Live Demo</a>
+
+        <section id="projects" class="py-24 bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-light text-gray-100 mb-4">My Projects</h2>
+                    <div class="w-16 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Explore my latest work and contributions to the developer community</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                    
+                    <!-- Featured Project Card -->
+                    <div class="lg:col-span-2 xl:col-span-2">
+                        <div class="group bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
+                            <!-- Project Header -->
+                            <div class="bg-gradient-to-r from-slate/60 to-slate/40 p-6 border-b border-slate-light/10">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                                    </div>
+                                    <span class="text-xs text-gray-400 font-mono">FEATURED</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Project Content -->
+                            <div class="p-8">
+                                <div class="flex items-start justify-between mb-6">
+                                    <div>
+                                        <h3 class="text-2xl font-semibold text-gray-100 mb-2 group-hover:text-primary transition-colors duration-300">
+                                            Fallout Shelter Save Editor
+                                        </h3>
+                                        <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                            <span class="flex items-center">
+                                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                </svg>
+                                                Popular
+                                            </span>
+                                            <span>•</span>
+                                            <span>Python</span>
+                                            <span>•</span>
+                                            <span>Desktop App</span>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                                            <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+                                    A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience. Built with modern Python GUI frameworks for optimal user experience.
+                                </p>
+                                
+                                <!-- Features List -->
+                                <div class="grid md:grid-cols-2 gap-4 mb-8">
+                                    <div class="flex items-center text-gray-300">
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Resource Management
+                                    </div>
+                                    <div class="flex items-center text-gray-300">
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Save File Backup
+                                    </div>
+                                    <div class="flex items-center text-gray-300">
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Vault Customization
+                                    </div>
+                                    <div class="flex items-center text-gray-300">
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        </svg>
+                                        Cross-Platform
+                                    </div>
+                                </div>
+                                
+                                <!-- Action Buttons -->
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank"
+                                        class="flex-1 inline-flex items-center justify-center bg-slate-light/80 hover:bg-slate-light text-gray-100 px-6 py-3 rounded-lg transition-all duration-300 font-medium border border-slate-light/30 hover:border-slate-light/60">
+                                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        View Source
+                                    </a>
+                                    <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank"
+                                        class="flex-1 inline-flex items-center justify-center bg-primary hover:bg-secondary text-darker px-6 py-3 rounded-lg transition-all duration-300 font-medium hover:shadow-lg hover:shadow-primary/20">
+                                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                        Live Demo
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <!-- Additional Project Placeholder -->
+                    <div class="xl:col-span-1">
+                        <div class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 text-center hover:border-primary/30 transition-all duration-300 h-full flex flex-col justify-center">
+                            <div class="w-16 h-16 bg-slate/50 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-300 mb-4">More Projects Coming Soon</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Stay tuned for more exciting projects and contributions to the open source community.
+                            </p>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </section>
 
-        <section id="partnerships" class="py-20 bg-slate/20">
-            <div class="max-w-6xl mx-auto px-6">
+        <section id="partnerships" class="py-20 bg-slate/20 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5"></div>
+            <div class="max-w-6xl mx-auto px-6 relative z-10">
                 <h2 class="text-4xl font-bold text-gray-100 text-center mb-16">Partnerships</h2>
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-slate/50 border border-slate-light/30 rounded-xl shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 p-8 text-center">
-                        <div class="flex justify-center mb-6">
-                            <img src="labs.png" alt="X360 LABS" class="h-24 w-auto">
+
+                <!-- Partnership Images Row -->
+                <div class="flex justify-center items-center gap-12 mb-12">
+                    <div class="group">
+                        <div
+                            class="w-32 h-32 rounded-full border-4 border-primary/50 hover:border-primary transition-all duration-300 overflow-hidden bg-slate/30 flex items-center justify-center shadow-lg hover:shadow-primary/20">
+                            <img src="bored.jpg" alt="Bored Pepe Gaming" class="w-full h-full object-cover">
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-100 mb-4"><a href="https://x360labs.com">x360Labs</a></h3>
-                        <p class="text-gray-300 mb-6 leading-relaxed text-lg">Proud to partner with x360Lab</p>
-                        <p style="font-size: small;" class="text-gray-300 mb-6 leading-relaxed text-lg">#1 supporter and marketplace for RGH Customers and Sellers</p>
+                        <p class="text-center text-gray-300 mt-3 font-medium">Gaming Culture</p>
+                    </div>
+
+                    <div class="w-px h-16 bg-gradient-to-b from-transparent via-primary/50 to-transparent"></div>
+
+                    <div class="group">
+                        <div
+                            class="w-32 h-32 rounded-full border-4 border-primary/50 hover:border-primary transition-all duration-300 overflow-hidden bg-slate/30 flex items-center justify-center shadow-lg hover:shadow-primary/20">
+                            <img src="labs.png" alt="X360 LABS" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-center text-gray-300 mt-3 font-medium">X360 LABS</p>
+                    </div>
+                </div>
+
+                <!-- Partnership Content -->
+                <div class="max-w-4xl mx-auto">
+                    <div
+                        class="bg-gradient-to-br from-slate/60 to-slate/40 border border-slate-light/30 rounded-2xl shadow-2xl hover:shadow-primary/10 transition-all duration-500 p-10 text-center backdrop-blur-sm">
+                        <div class="mb-8">
+                            <h3 class="text-3xl font-bold text-gray-100 mb-2">
+                                <a href="https://x360labs.com"
+                                    class="hover:text-primary transition-colors duration-300">x360Labs</a>
+                            </h3>
+                            <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+                        </div>
+
+                        <p class="text-gray-300 mb-4 leading-relaxed text-lg max-w-3xl mx-auto">
+                            Proud to partner with x360Labs - the #1 supporter and marketplace for RGH customers and
+                            sellers.
+                        </p>
+                        <p class="text-gray-400 mb-8 leading-relaxed text-base max-w-3xl mx-auto">
+                            Together we're building innovative gaming solutions and fostering a thriving community of
+                            gaming enthusiasts and modding experts.
+                        </p>
+
+                        <div class="grid md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-slate/40 rounded-xl p-6 border border-slate-light/20">
+                                <h4 class="text-xl font-semibold text-primary mb-3">RGH Marketplace</h4>
+                                <p class="text-gray-300 text-sm">Leading platform for RGH hardware and services</p>
+                            </div>
+                            <div class="bg-slate/40 rounded-xl p-6 border border-slate-light/20">
+                                <h4 class="text-xl font-semibold text-primary mb-3">Gaming Community</h4>
+                                <p class="text-gray-300 text-sm">Supporting modding culture and gaming innovation</p>
+                            </div>
+                        </div>
 
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="#" target="_blank" class="inline-block bg-primary text-darker px-8 py-3 rounded-lg hover:bg-secondary transition-colors duration-300 font-semibold">Learn More</a>
-                            <a href="#contact" class="inline-block bg-slate-light text-gray-100 px-8 py-3 rounded-lg hover:bg-slate transition-colors duration-300 font-semibold border border-slate-light/50">Collaborate</a>
+                            <a href="https://x360labs.com" target="_blank"
+                                class="inline-flex items-center justify-center bg-gradient-to-r from-primary to-secondary text-darker px-8 py-4 rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 font-semibold text-lg">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                Visit x360Labs
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center bg-slate-light/80 text-gray-100 px-8 py-4 rounded-xl hover:bg-slate transition-all duration-300 font-semibold text-lg border border-slate-light/50">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z">
+                                    </path>
+                                </svg>
+                                Start Collaboration
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -97,10 +272,13 @@
         <section id="contact" class="py-20 bg-dark text-white">
             <div class="max-w-4xl mx-auto px-6 text-center">
                 <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-                <p class="text-xl mb-8 text-gray-300">Feel free to reach out if you'd like to collaborate or just say hello!</p>
+                <p class="text-xl mb-8 text-gray-300">Feel free to reach out if you'd like to collaborate or just say
+                    hello!</p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="https://github.com/poseidonlocal" target="_blank" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">GitHub</a>
-                    <a href="mailto:contact@poseidonlocal.dev" class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">Email</a>
+                    <a href="https://github.com/poseidonlocal" target="_blank"
+                        class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">GitHub</a>
+                    <a href="mailto:contact@poseidonlocal.dev"
+                        class="inline-block border-2 border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary hover:text-darker transition-all duration-300 font-medium">Email</a>
                 </div>
             </div>
         </section>
