@@ -22,38 +22,147 @@
             }
         }
     </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #9AFF00, #7ED321);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(42, 52, 65, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
 
 <body class="font-sans leading-relaxed text-gray-100 bg-darker">
 
-    <header class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50">
+    <header
+        class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50 transition-all duration-300"
+        id="navbar">
         <nav class="max-w-6xl mx-auto px-6">
             <div class="flex justify-between items-center h-16">
-                <h1 class="text-xl font-bold text-gray-100">poseidonLocal</h1>
-                <ul class="flex space-x-8">
-                    <li><a href="#home"
-                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Home</a>
-                    </li>
-                    <li><a href="#projects"
-                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Projects</a>
-                    </li>
-                    <li><a href="#partnerships"
-                            class="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">Partnerships</a>
-                    </li>
-                </ul>
+                <h1 class="text-xl font-bold gradient-text animate-pulse-glow">poseidonLocal</h1>
+                <div class="flex items-center space-x-8">
+                    <ul class="hidden md:flex space-x-8">
+                        <li><a href="#home"
+                                class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Home
+                                <span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="#projects"
+                                class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Projects
+                                <span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="#partnerships"
+                                class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Partnerships
+                                <span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Contact
+                                <span
+                                    class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden text-gray-300 hover:text-primary transition-colors duration-300"
+                        id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate/90 rounded-lg mt-2">
+                    <a href="#home"
+                        class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="#projects"
+                        class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="#partnerships"
+                        class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Partnerships</a>
+                    <a href="#contact"
+                        class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-16">
-            <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2 class="text-5xl font-light mb-6">Welcome to My GitHub Website</h2>
-                <p class="text-xl mb-8 text-gray-300">A developer passionate about creating useful tools and
-                    applications</p>
-                <a href="#projects"
-                    class="inline-block bg-primary text-darker px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">View
-                    My Projects</a>
+        <section id="home"
+            class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-20 relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div
+                    class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse">
+                </div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse"
+                    style="animation-delay: 2s;"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"
+                    style="animation-delay: 4s;"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+                <div class="animate-slide-up">
+                    <h2 class="text-6xl md:text-7xl font-light mb-6 leading-tight">
+                        Welcome to My
+                        <span class="gradient-text font-semibold">GitHub</span>
+                        Website
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        A developer passionate about creating useful tools and applications that make a difference
+                    </p>
+
+                    <!-- Stats row -->
+                    <div class="flex flex-wrap justify-center gap-8 mb-12 text-sm">
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">5+</div>
+                            <div class="text-gray-400">Projects</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">1K+</div>
+                            <div class="text-gray-400">Downloads</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Open</div>
+                            <div class="text-gray-400">Source</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#projects"
+                            class="inline-block bg-primary text-darker px-8 py-4 rounded-full font-semibold hover:transform hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
+                            View My Projects
+                        </a>
+                        <a href="https://github.com/poseidonlocal" target="_blank"
+                            class="inline-block border-2 border-primary text-primary px-8 py-4 rounded-full font-semibold hover:bg-primary hover:text-darker transition-all duration-300">
+                            GitHub Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
             </div>
         </section>
 
@@ -65,15 +174,17 @@
                 <div class="text-center mb-16">
                     <h2 class="text-4xl font-light text-gray-100 mb-4">My Projects</h2>
                     <div class="w-16 h-1 bg-primary mx-auto mb-6"></div>
-                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Explore my latest work and contributions to the developer community</p>
+                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">Explore my latest work and contributions to the
+                        developer community</p>
                 </div>
 
                 <!-- Projects Grid -->
                 <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-                    
+
                     <!-- Featured Project Card -->
                     <div class="lg:col-span-2 xl:col-span-2">
-                        <div class="group bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
+                        <div
+                            class="group bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden hover:border-primary/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
                             <!-- Project Header -->
                             <div class="bg-gradient-to-r from-slate/60 to-slate/40 p-6 border-b border-slate-light/10">
                                 <div class="flex items-center justify-between">
@@ -85,18 +196,21 @@
                                     <span class="text-xs text-gray-400 font-mono">FEATURED</span>
                                 </div>
                             </div>
-                            
+
                             <!-- Project Content -->
                             <div class="p-8">
                                 <div class="flex items-start justify-between mb-6">
                                     <div>
-                                        <h3 class="text-2xl font-semibold text-gray-100 mb-2 group-hover:text-primary transition-colors duration-300">
+                                        <h3
+                                            class="text-2xl font-semibold text-gray-100 mb-2 group-hover:text-primary transition-colors duration-300">
                                             Fallout Shelter Save Editor
                                         </h3>
                                         <div class="flex items-center space-x-4 text-sm text-gray-400">
                                             <span class="flex items-center">
                                                 <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                                    <path
+                                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                                    </path>
                                                 </svg>
                                                 Popular
                                             </span>
@@ -107,59 +221,77 @@
                                         </div>
                                     </div>
                                     <div class="flex space-x-2">
-                                        <div class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
+                                        <div
+                                            class="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center">
                                             <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
-                                                <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                                <path fill-rule="evenodd"
+                                                    d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd"></path>
                                             </svg>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <p class="text-gray-300 leading-relaxed mb-8 text-lg">
-                                    A comprehensive save editor for Fallout Shelter that allows players to modify their game saves, manage resources, and customize their vault experience. Built with modern Python GUI frameworks for optimal user experience.
+                                    A comprehensive save editor for Fallout Shelter that allows players to modify their
+                                    game saves, manage resources, and customize their vault experience. Built with
+                                    modern Python GUI frameworks for optimal user experience.
                                 </p>
-                                
+
                                 <!-- Features List -->
                                 <div class="grid md:grid-cols-2 gap-4 mb-8">
                                     <div class="flex items-center text-gray-300">
-                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Resource Management
                                     </div>
                                     <div class="flex items-center text-gray-300">
-                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Save File Backup
                                     </div>
                                     <div class="flex items-center text-gray-300">
-                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Vault Customization
                                     </div>
                                     <div class="flex items-center text-gray-300">
-                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                        <svg class="w-5 h-5 text-primary mr-3" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M5 13l4 4L19 7"></path>
                                         </svg>
                                         Cross-Platform
                                     </div>
                                 </div>
-                                
+
                                 <!-- Action Buttons -->
                                 <div class="flex flex-col sm:flex-row gap-4">
-                                    <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor" target="_blank"
+                                    <a href="https://github.com/poseidonlocal/Fallout-Shelter-Save-Editor"
+                                        target="_blank"
                                         class="flex-1 inline-flex items-center justify-center bg-slate-light/80 hover:bg-slate-light text-gray-100 px-6 py-3 rounded-lg transition-all duration-300 font-medium border border-slate-light/30 hover:border-slate-light/60">
                                         <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clip-rule="evenodd"></path>
+                                            <path fill-rule="evenodd"
+                                                d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                                                clip-rule="evenodd"></path>
                                         </svg>
                                         View Source
                                     </a>
                                     <a href="https://github.com/poseidonlocal/poseidonlocal.github.io" target="_blank"
                                         class="flex-1 inline-flex items-center justify-center bg-primary hover:bg-secondary text-darker px-6 py-3 rounded-lg transition-all duration-300 font-medium hover:shadow-lg hover:shadow-primary/20">
                                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                            </path>
                                         </svg>
                                         Live Demo
                                     </a>
@@ -167,13 +299,17 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Additional Project Placeholder -->
                     <div class="xl:col-span-1">
-                        <div class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 text-center hover:border-primary/30 transition-all duration-300 h-full flex flex-col justify-center">
-                            <div class="w-16 h-16 bg-slate/50 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 text-center hover:border-primary/30 transition-all duration-300 h-full flex flex-col justify-center">
+                            <div
+                                class="w-16 h-16 bg-slate/50 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                                 </svg>
                             </div>
                             <h3 class="text-xl font-semibold text-gray-300 mb-4">More Projects Coming Soon</h3>
@@ -182,7 +318,241 @@
                             </p>
                         </div>
                     </div>
-                    
+
+                </div>
+
+                <!-- Upcoming Projects Section -->
+                <div class="mt-20">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-light text-gray-100 mb-4">🚀 Upcoming Projects</h3>
+                        <div class="w-12 h-1 bg-secondary mx-auto mb-6"></div>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Exciting projects currently in development
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- BoredKV -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-blue-400 font-bold text-lg">C#</span>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-100">BoredKV</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Fully working C# app that safely checks and organizes KVs.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                In Development
+                            </div>
+                        </div>
+
+                        <!-- BoredStealth -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-red-400 font-bold text-sm">C++</span>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-100">BoredStealth</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Variant RGH Stealth fork for personal use. Access available upon request.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Private Access
+                            </div>
+                        </div>
+
+                        <!-- NextKV -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-gray-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-gray-400 font-bold text-sm">JS</span>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-100">NextKV</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Fully working Next.js web app that safely checks and organizes KVs with an admin panel.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Next.js
+                            </div>
+                        </div>
+
+                        <!-- BoredRPG Game -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div
+                                    class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-purple-400 font-bold text-sm">PHP</span>
+                                </div>
+                                <h4 class="text-xl font-semibold text-gray-100">BoredRPG Game</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Browser RPG with Framework7—engaging gameplay and a unique story.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
+                                    </path>
+                                </svg>
+                                Framework7
+                            </div>
+                        </div>
+
+                        <!-- RGH ISO & Game Downloader -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-green-400 font-bold text-xs">JS</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-100">RGH ISO Downloader</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Download Xbox game ISOs directly from the app, simulating the official Xbox Store.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path
+                                        d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z">
+                                    </path>
+                                </svg>
+                                Electron
+                            </div>
+                        </div>
+
+                        <!-- Xbox.com Clone -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-gray-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-gray-400 font-bold text-sm">JS</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-100">Xbox.com Clone</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                Modern recreation of the Xbox.com experience with responsive, dynamic content.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Next.js
+                            </div>
+                        </div>
+
+                        <!-- Xbox 360 Shell Designer -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-3">
+                                    <span class="text-cyan-400 font-bold text-sm">Qt6</span>
+                                </div>
+                                <h4 class="text-lg font-semibold text-gray-100">Xbox 360 Shell Designer</h4>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                                1:1 3D model of an Xbox 360 shell with custom design features.
+                            </p>
+                            <div class="flex items-center text-xs text-gray-400">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Qt6 (maybe)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Releases Section -->
+                <div class="mt-20">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-light text-gray-100 mb-4">📜 Recent Releases</h3>
+                        <div class="w-12 h-1 bg-secondary mx-auto mb-6"></div>
+                        <p class="text-lg text-gray-400 max-w-2xl mx-auto">Latest projects and updates</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- csharp KVChecker -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center mb-2">
+                                        <span
+                                            class="text-xs text-gray-400 bg-slate/50 px-2 py-1 rounded mr-3">2025-08-10</span>
+                                        <h4 class="text-xl font-semibold text-gray-100">csharp KVChecker</h4>
+                                    </div>
+                                    <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                                        Tommy from TeaPot made this and now it's open source.
+                                    </p>
+                                    <div class="flex items-center text-xs text-gray-400">
+                                        <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded mr-2">C#</span>
+                                        <span>Open Source</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 md:mt-0 md:ml-6">
+                                    <a href="https://github.com/poseidonlocal/csharp-KV-Checker-Source" target="_blank"
+                                        class="inline-flex items-center bg-primary text-darker px-4 py-2 rounded-lg hover:bg-secondary transition-all duration-300 font-medium text-sm">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BoredCasino -->
+                        <div
+                            class="bg-slate/30 backdrop-blur-sm border border-slate-light/20 rounded-lg p-6 hover:border-primary/30 transition-all duration-300">
+                            <div class="flex flex-col md:flex-row md:items-center justify-between">
+                                <div class="flex-1">
+                                    <div class="flex items-center mb-2">
+                                        <span
+                                            class="text-xs text-gray-400 bg-slate/50 px-2 py-1 rounded mr-3">2025-08-06</span>
+                                        <h4 class="text-xl font-semibold text-gray-100">BoredCasino</h4>
+                                    </div>
+                                    <p class="text-gray-300 text-sm leading-relaxed mb-3">
+                                        Next.js casino template inspired by howl.gg.
+                                    </p>
+                                    <div class="flex items-center text-xs text-gray-400">
+                                        <span class="bg-gray-500/20 text-gray-400 px-2 py-1 rounded mr-2">Next.js</span>
+                                        <span>Template</span>
+                                    </div>
+                                </div>
+                                <div class="mt-4 md:mt-0 md:ml-6">
+                                    <a href="https://github.com/poseidonlocal/BoredCasino" target="_blank"
+                                        class="inline-flex items-center bg-primary text-darker px-4 py-2 rounded-lg hover:bg-secondary transition-all duration-300 font-medium text-sm">
+                                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -197,7 +567,8 @@
                     <div class="group">
                         <div
                             class="w-32 h-32 rounded-full border-4 border-primary/50 hover:border-primary transition-all duration-300 overflow-hidden bg-slate/30 flex items-center justify-center shadow-lg hover:shadow-primary/20">
-                            <img src="bored.jpg" alt="Bored Pepe Gaming" class="w-full h-full object-cover">
+                            <img src="pLocal.png" alt="Bored Pepe Gaming"
+                                class="w-full h-full object-cover cursor-pointer" id="easter-egg-img">
                         </div>
                         <p class="text-center text-gray-300 mt-3 font-medium">@theartofbored / Poseidon / Bryt0n</p>
                     </div>
@@ -223,7 +594,7 @@
                                     class="hover:text-primary transition-colors duration-300">x360Labs</a>
                             </h3>
                             <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
-                       </div>
+                        </div>
 
                         <p class="text-gray-300 mb-4 leading-relaxed text-lg max-w-3xl mx-auto">
                             Proud to partner with x360Labs - the #1 supporter and marketplace for RGH customers and
@@ -280,13 +651,169 @@
         </section>
     </main>
 
-    <footer class="bg-darker border-t border-slate/30 text-white py-8">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <p class="text-gray-400">&copy; 2025 poseidonLocal@github.io. Built with GitHub Pages.</p>
+    <footer class="bg-darker border-t border-slate/30 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div class="text-center md:text-left">
+                    <h3 class="text-xl font-bold gradient-text mb-4">poseidonLocal</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Creating useful tools and applications for the developer community.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="text-center">
+                    <h4 class="text-lg font-semibold text-gray-100 mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#projects"
+                            class="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm">Projects</a>
+                        <a href="#partnerships"
+                            class="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm">Partnerships</a>
+                        <a href="#contact"
+                            class="block text-gray-400 hover:text-primary transition-colors duration-300 text-sm">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Social -->
+                <div class="text-center md:text-right">
+                    <h4 class="text-lg font-semibold text-gray-100 mb-4">Connect</h4>
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="https://github.com/poseidonlocal" target="_blank"
+                            class="w-10 h-10 bg-slate/50 rounded-full flex items-center justify-center hover:bg-primary hover:text-darker transition-all duration-300"
+                            aria-label="GitHub Profile">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:contact@poseidonlocal.dev"
+                            class="w-10 h-10 bg-slate/50 rounded-full flex items-center justify-center hover:bg-primary hover:text-darker transition-all duration-300"
+                            aria-label="Email Contact">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="border-t border-slate/30 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2025 poseidonLocal@github.io. Built with
+                    <span class="text-primary">❤️</span> and GitHub Pages.
+                </p>
+                <p class="text-gray-500 text-xs mt-2">
+                    Last updated: January 2025
+                </p>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark/98');
+                navbar.classList.remove('bg-dark/95');
+            } else {
+                navbar.classList.add('bg-dark/95');
+                navbar.classList.remove('bg-dark/98');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.glass-effect, .group').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Easter egg functionality
+        let easterEggClicks = 0;
+        const easterEggImg = document.getElementById('easter-egg-img');
+
+        if (easterEggImg) {
+            easterEggImg.addEventListener('click', () => {
+                easterEggClicks++;
+
+                // Add visual feedback for clicks
+                easterEggImg.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    easterEggImg.style.transform = 'scale(1)';
+                }, 100);
+
+                // Add subtle glow effect on each click
+                easterEggImg.style.boxShadow = `0 0 ${easterEggClicks * 10}px rgba(154, 255, 0, ${0.3 + (easterEggClicks * 0.2)})`;
+
+                if (easterEggClicks === 3) {
+                    // Add special effect before redirect
+                    easterEggImg.style.animation = 'pulse-glow 0.5s ease-in-out 3';
+
+                    setTimeout(() => {
+                        window.open('https://consolemods.org', '_blank');
+                        easterEggClicks = 0; // Reset counter
+                        easterEggImg.style.boxShadow = ''; // Reset glow
+                        easterEggImg.style.animation = ''; // Reset animation
+                    }, 1500);
+                }
+
+                // Reset counter after 5 seconds of inactivity
+                setTimeout(() => {
+                    if (easterEggClicks < 3) {
+                        easterEggClicks = 0;
+                        easterEggImg.style.boxShadow = '';
+                    }
+                }, 5000);
+            });
+        }
+
+        // Add loading state management
+        window.addEventListener('load', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
 </body>
 
 </html>
