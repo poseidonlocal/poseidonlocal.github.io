@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poseidonPhoto - Professional Image Corner Rounding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9AFF00',
+                        secondary: '#7ED321',
+                        dark: '#1A1F2E',
+                        darker: '#0F1419',
+                        slate: '#2A3441',
+                        'slate-light': '#3A4551'
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes slide-up {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #9AFF00, #7ED321);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(42, 52, 65, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .drag-over {
+            border-color: #9AFF00 !important;
+            background: rgba(154, 255, 0, 0.1) !important;
+            box-shadow: 0 0 30px rgba(154, 255, 0, 0.3) !important;
+        }
+        
+        .preview-container {
+            background: 
+                linear-gradient(45deg, rgba(42, 52, 65, 0.3) 25%, transparent 25%), 
+                linear-gradient(-45deg, rgba(42, 52, 65, 0.3) 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, rgba(42, 52, 65, 0.3) 75%), 
+                linear-gradient(-45deg, transparent 75%, rgba(42, 52, 65, 0.3) 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-sans leading-relaxed text-gray-100 bg-darker">
+
+    <header class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50 transition-all duration-300">
+        <nav class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <h1 class="text-xl font-bold gradient-text">poseidonPhoto</h1>
+                <div class="flex items-center space-x-8">
+                    <span class="text-gray-300 text-sm">Professional Image Processing</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-20 relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+                <div class="animate-slide-up">
+                    <h2 class="text-5xl md:text-6xl font-light mb-6 leading-tight">
+                        Professional Image
+                        <span class="gradient-text font-semibold">Corner Rounding</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Secure, browser-based image processing with professional results. No uploads required.
+                    </p>
+
+                    <!-- Stats row -->
+                    <div class="flex flex-wrap justify-center gap-8 mb-12 text-sm">
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">100%</div>
+                            <div class="text-gray-400">Private</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Instant</div>
+                            <div class="text-gray-400">Processing</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">High</div>
+                            <div class="text-gray-400">Quality</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Main Application Section -->
+        <section class="py-24 bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-12">
+                    
+                    <!-- Left Panel - Controls -->
+                    <div class="space-y-8">
+                        <!-- File Upload -->
+                        <div class="bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 hover:border-primary/30 transition-all duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-100 mb-6 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                Upload Image
+                            </h3>
+                            
+                            <div id="dropZone" class="border-2 border-dashed border-slate-light/40 rounded-lg p-10 text-center cursor-pointer transition-all duration-300 hover:border-primary/50">
+                                <div class="space-y-4">
+                                    <svg class="mx-auto h-16 w-16 text-gray-400 animate-float" stroke="currentColor" fill="none" viewBox="0 0 48 48">
+                                        <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <div>
+                                        <p class="text-gray-300 text-lg">
+                                            <span class="font-medium text-primary">Click to upload</span> or drag and drop
+                                        </p>
+                                        <p class="text-gray-400 mt-2">
+                                            PNG, JPG, JPEG, WebP up to 10MB
+                                        </p>
+                                    </div>
+                                </div>
+                                <input type="file" id="fileInput" class="hidden" accept="image/*">
+                            </div>
+                        </div>
+
+                        <!-- Corner Settings -->
+                        <div class="bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 hover:border-primary/30 transition-all duration-300">
+                            <h3 class="text-2xl font-semibold text-gray-100 mb-6 flex items-center">
+                                <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                                Corner Settings
+                            </h3>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-gray-300 font-medium mb-4">
+                                        Corner Radius: <span id="radiusValue" class="text-primary font-bold text-lg">50px</span>
+                                    </label>
+                                    <input type="range" id="radiusSlider" min="0" max="200" value="50" 
+                                           class="w-full h-2 bg-slate rounded-lg appearance-none cursor-pointer">
+                                </div>
+                                
+                                <div class="flex items-center space-x-4 bg-slate/50 rounded-lg p-4">
+                                    <label class="text-gray-300 font-medium">
+                                        Precise value:
+                                    </label>
+                                    <input type="number" id="radiusInput" min="0" max="1000" value="50"
+                                           class="w-28 px-4 py-2 bg-dark border border-slate-light/30 rounded-lg text-gray-100 focus:border-primary focus:outline-none">
+                                    <span class="text-primary font-bold">px</span>
+                                </div>
+                                
+                                <div class="flex items-center space-x-3">
+                                    <input type="checkbox" id="livePreview" checked 
+                                           class="w-5 h-5 text-primary bg-dark border-slate-light/30 rounded focus:ring-primary">
+                                    <label for="livePreview" class="text-gray-300 font-medium">
+                                        Live Preview
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8">
+                            <div class="space-y-4">
+                                <button id="generatePreview" disabled
+                                        class="w-full bg-slate-light/80 hover:bg-slate-light text-gray-100 py-4 px-6 rounded-lg font-medium transition-all duration-300 border border-slate-light/30 hover:border-slate-light/60 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Generate Preview
+                                </button>
+                                
+                                <button id="downloadImage" disabled
+                                        class="w-full bg-primary hover:bg-secondary text-darker py-4 px-6 rounded-lg font-bold transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed">
+                                    Download Processed Image
+                                </button>
+                            </div>
+                            
+                            <!-- Progress Bar -->
+                            <div id="progressContainer" class="mt-6 hidden">
+                                <div class="bg-slate rounded-full h-3 overflow-hidden">
+                                    <div id="progressBar" class="bg-gradient-to-r from-primary to-secondary h-3 rounded-full transition-all duration-500" style="width: 0%"></div>
+                                </div>
+                                <p id="progressText" class="text-gray-300 mt-3 text-center font-medium">Processing...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Preview -->
+                    <div class="bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 hover:border-primary/30 transition-all duration-300">
+                        <h3 class="text-2xl font-semibold text-gray-100 mb-6 flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            Preview
+                        </h3>
+                        
+                        <div id="previewContainer" class="preview-container border-2 border-slate-light/30 rounded-lg min-h-96 flex items-center justify-center relative overflow-hidden">
+                            <div id="previewPlaceholder" class="text-center text-gray-400">
+                                <svg class="mx-auto h-20 w-20 mb-6 text-gray-500 animate-float" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                </svg>
+                                <p class="text-xl font-medium text-gray-300 mb-2">No Image Selected</p>
+                                <p class="text-gray-400">Upload an image to see the preview</p>
+                            </div>
+                            
+                            <canvas id="previewCanvas" class="max-w-full max-h-96 hidden rounded-lg shadow-lg"></canvas>
+                        </div>
+                        
+                        <div id="imageInfo" class="mt-6 text-gray-300 hidden">
+                            <div class="grid grid-cols-2 gap-6 bg-slate/50 rounded-lg p-4">
+                                <div class="text-center">
+                                    <span class="block text-primary font-bold text-sm uppercase tracking-wider">Dimensions</span>
+                                    <span id="imageDimensions" class="text-gray-100 text-lg font-mono">-</span>
+                                </div>
+                                <div class="text-center">
+                                    <span class="block text-primary font-bold text-sm uppercase tracking-wider">File Size</span>
+                                    <span id="imageSize" class="text-gray-100 text-lg font-mono">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark border-t border-slate/30 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 <span class="gradient-text font-semibold">poseidonPhoto</span> - Professional Image Processing
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
