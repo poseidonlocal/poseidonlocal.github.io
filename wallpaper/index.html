@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallpaper Gallery - Premium Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9AFF00',
+                        secondary: '#7ED321',
+                        dark: '#1A1F2E',
+                        darker: '#0F1419',
+                        slate: '#2A3441',
+                        'slate-light': '#3A4551'
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes slide-up {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #9AFF00, #7ED321);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(42, 52, 65, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .wallpaper-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .wallpaper-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(154, 255, 0, 0.1);
+        }
+
+        .wallpaper-overlay {
+            background: linear-gradient(to top, rgba(15, 20, 25, 0.8), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .wallpaper-card:hover .wallpaper-overlay {
+            opacity: 1;
+        }
+
+        .download-btn {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .wallpaper-card:hover .download-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal {
+            backdrop-filter: blur(10px);
+            background: rgba(15, 20, 25, 0.9);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #2A3441;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #9AFF00;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7ED321;
+        }
+    </style>
+</head>
+
+<body class="font-sans leading-relaxed text-gray-100 bg-darker">
+
+    <header class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50 transition-all duration-300">
+        <nav class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <a href="../index.html" class="text-xl font-bold gradient-text hover:opacity-80 transition-opacity">poseidonLocal</a>
+                <div class="flex items-center space-x-8">
+                    <ul class="hidden md:flex space-x-8">
+                        <li><a href="../index.html" class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Home
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="../index.html#projects" class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Projects
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="../photo/index.html" class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Photo Tools
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="../methods/index.html" class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Methods
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li><a href="index.html" class="text-primary font-medium relative group">
+                                Wallpapers
+                                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-primary"></span>
+                            </a>
+                        </li>
+                        <li><a href="../index.html#contact" class="text-gray-300 hover:text-primary transition-all duration-300 font-medium relative group">
+                                Contact
+                                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Mobile menu button -->
+                    <button class="md:hidden text-gray-300 hover:text-primary transition-colors duration-300" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-slate/90 rounded-lg mt-2">
+                    <a href="../index.html" class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Home</a>
+                    <a href="../index.html#projects" class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Projects</a>
+                    <a href="../photo/index.html" class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Photo Tools</a>
+                    <a href="../methods/index.html" class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Methods</a>
+                    <a href="index.html" class="block px-3 py-2 text-primary font-medium">Wallpapers</a>
+                    <a href="../index.html#contact" class="block px-3 py-2 text-gray-300 hover:text-primary transition-colors duration-300">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-20 relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+                <div class="animate-slide-up">
+                    <h2 class="text-5xl md:text-6xl font-light mb-6 leading-tight">
+                        Premium
+                        <span class="gradient-text font-semibold">Wallpapers</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Discover stunning high-resolution wallpapers for your desktop and mobile devices.
+                    </p>
+
+                    <!-- Stats row -->
+                    <div class="flex flex-wrap justify-center gap-8 mb-12 text-sm">
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">4K+</div>
+                            <div class="text-gray-400">Resolution</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Free</div>
+                            <div class="text-gray-400">Download</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">HD</div>
+                            <div class="text-gray-400">Quality</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Collection Info Section -->
+        <section class="py-8 bg-dark/50">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="glass-effect rounded-lg px-8 py-4 inline-block">
+                    <h3 class="text-xl font-semibold text-gray-100 mb-2">PoseidonLocal Collection</h3>
+                    <p class="text-gray-300">3 Premium Wallpapers • HD Quality • Free Download</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wallpaper Gallery -->
+        <section class="py-16 bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <div id="wallpaper-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+                    
+                    <!-- PoseidonLocal Wallpaper 1 -->
+                    <div class="wallpaper-card bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden relative group" data-category="all">
+                        <div class="aspect-w-16 aspect-h-10 relative">
+                            <img src="assets/poseidonLocal_1.png" alt="PoseidonLocal Wallpaper 1" class="w-full h-48 object-cover">
+                            <div class="wallpaper-overlay absolute inset-0 flex items-end p-4">
+                                <div class="w-full">
+                                    <h3 class="text-white font-semibold mb-2">PoseidonLocal 1</h3>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300 text-sm">HD • Premium</span>
+                                        <button class="download-btn bg-primary hover:bg-secondary text-darker px-4 py-2 rounded-lg font-medium transition-all duration-300" onclick="downloadWallpaper('poseidonLocal_1.png', 'PoseidonLocal Wallpaper 1')">
+                                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PoseidonLocal Wallpaper 2 -->
+                    <div class="wallpaper-card bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden relative group" data-category="all">
+                        <div class="aspect-w-16 aspect-h-10 relative">
+                            <img src="assets/poseidonLocal_2.png" alt="PoseidonLocal Wallpaper 2" class="w-full h-48 object-cover">
+                            <div class="wallpaper-overlay absolute inset-0 flex items-end p-4">
+                                <div class="w-full">
+                                    <h3 class="text-white font-semibold mb-2">PoseidonLocal 2</h3>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300 text-sm">HD • Premium</span>
+                                        <button class="download-btn bg-primary hover:bg-secondary text-darker px-4 py-2 rounded-lg font-medium transition-all duration-300" onclick="downloadWallpaper('poseidonLocal_2.png', 'PoseidonLocal Wallpaper 2')">
+                                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PoseidonLocal Wallpaper 3 -->
+                    <div class="wallpaper-card bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg overflow-hidden relative group" data-category="all">
+                        <div class="aspect-w-16 aspect-h-10 relative">
+                            <img src="assets/poseidonLocal_3.png" alt="PoseidonLocal Wallpaper 3" class="w-full h-48 object-cover">
+                            <div class="wallpaper-overlay absolute inset-0 flex items-end p-4">
+                                <div class="w-full">
+                                    <h3 class="text-white font-semibold mb-2">PoseidonLocal 3</h3>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-300 text-sm">HD • Premium</span>
+                                        <button class="download-btn bg-primary hover:bg-secondary text-darker px-4 py-2 rounded-lg font-medium transition-all duration-300" onclick="downloadWallpaper('poseidonLocal_3.png', 'PoseidonLocal Wallpaper 3')">
+                                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                            </svg>
+                                            Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Download Modal -->
+    <div id="downloadModal" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="bg-slate/90 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 max-w-md w-full">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-100 mb-2">Download Started</h3>
+                <p class="text-gray-300 mb-6">Your wallpaper download has begun. Thank you for using our gallery!</p>
+                <button onclick="closeModal()" class="bg-primary hover:bg-secondary text-darker py-2 px-6 rounded-lg font-medium transition-all duration-300">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark border-t border-slate/30 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 <span class="gradient-text font-semibold">Wallpaper Gallery</span> - Premium Collection
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Download functionality
+        function downloadWallpaper(filename, title) {
+            // Create a temporary link element to trigger download
+            const link = document.createElement('a');
+            link.href = `assets/${filename}`;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Show download modal
+            document.getElementById('downloadModal').classList.remove('hidden');
+            document.getElementById('downloadModal').classList.add('flex');
+
+            console.log(`Downloading: ${filename} - ${title}`);
+        }
+
+        function closeModal() {
+            document.getElementById('downloadModal').classList.add('hidden');
+            document.getElementById('downloadModal').classList.remove('flex');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('downloadModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Mobile menu functionality
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
