@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods Hub - Digital Solutions & Tutorials</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#9AFF00',
+                        secondary: '#7ED321',
+                        dark: '#1A1F2E',
+                        darker: '#0F1419',
+                        slate: '#2A3441',
+                        'slate-light': '#3A4551'
+                    },
+                    animation: {
+                        'slide-up': 'slide-up 0.6s ease-out',
+                        'fade-in': 'fade-in 0.5s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        @keyframes slide-up {
+            0% { transform: translateY(30px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes fade-in {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #9AFF00, #7ED321);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(42, 52, 65, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="font-sans leading-relaxed text-gray-100 bg-darker">
+
+    <header class="bg-dark/95 backdrop-blur-sm border-b border-slate/30 fixed w-full top-0 z-50 transition-all duration-300">
+        <nav class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center h-16">
+                <h1 class="text-xl font-bold gradient-text">Methods Hub</h1>
+                <div class="flex items-center space-x-8">
+                    <span class="text-gray-300 text-sm">Digital Solutions & Tutorials</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-dark via-slate to-darker text-white pt-24 pb-20 relative overflow-hidden">
+            <!-- Animated background elements -->
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
+                <div class="absolute top-40 right-10 w-72 h-72 bg-secondary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+                <div class="absolute -bottom-8 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl animate-pulse" style="animation-delay: 4s;"></div>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+                <div class="animate-slide-up">
+                    <h2 class="text-5xl md:text-6xl font-light mb-6 leading-tight">
+                        Digital
+                        <span class="gradient-text font-semibold">Methods</span>
+                    </h2>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        Discover powerful methods, tutorials, and digital solutions for modern challenges.
+                    </p>
+
+                    <!-- Stats row -->
+                    <div class="flex flex-wrap justify-center gap-8 mb-12 text-sm">
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Step-by-Step</div>
+                            <div class="text-gray-400">Guides</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Tested</div>
+                            <div class="text-gray-400">Methods</div>
+                        </div>
+                        <div class="glass-effect rounded-lg px-6 py-3">
+                            <div class="text-primary font-bold text-lg">Updated</div>
+                            <div class="text-gray-400">Regularly</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Methods Section -->
+        <section class="py-24 bg-darker">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h3 class="text-4xl font-bold text-gray-100 mb-4">Available Methods</h3>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Explore our collection of proven digital methods and tutorials
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                    
+                    <!-- Gemini Method Card -->
+                    <div class="bg-slate/40 backdrop-blur-sm border border-slate-light/20 rounded-lg p-8 hover:border-primary/30 transition-all duration-300 group">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-darker" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-100 group-hover:text-primary transition-colors">Google Gemini Student Offer</h4>
+                                <span class="text-sm text-primary font-medium">AI & Education</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Get free Gemini Pro for 15 months + 2TB Google One storage using temporary .edu email methods.
+                        </p>
+                        
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center space-x-4 text-sm text-gray-400">
+                                <span class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    15 min
+                                </span>
+                                <span class="flex items-center">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                    Easy
+                                </span>
+                            </div>
+                            <div class="flex items-center text-primary text-sm font-medium">
+                                <span class="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
+                                Active
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <a href="gemini-method.html" class="block w-full bg-primary hover:bg-secondary text-darker py-3 px-6 rounded-lg font-medium transition-all duration-300 text-center hover:shadow-lg hover:shadow-primary/20">
+                                View Method
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate/20 backdrop-blur-sm border border-slate-light/10 rounded-lg p-8 opacity-60">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-slate rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-semibold text-gray-400">@poseidonLocal | Coming Soon</h4>
+                                <span class="text-sm text-gray-500 font-medium">Coming Soon</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-gray-400 mb-6 leading-relaxed">
+                            ###########
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <button disabled class="block w-full bg-slate/50 text-gray-500 py-3 px-6 rounded-lg font-medium cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark border-t border-slate/30 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 <span class="gradient-text font-semibold">Methods Hub</span> - Digital Solutions & Tutorials
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
